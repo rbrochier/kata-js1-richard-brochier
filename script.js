@@ -109,8 +109,7 @@ console.log(decrireMeteo("neige", -8));
 /*partie 1*/
 
 const recommanderTenue = (conditions, temperature) => {
-
-let recommandations =[];
+  let recommandations = [];
   const combi = [
     { icone: "🧥", texte: "Manteau d'hiver indispensable" },
     { icone: "🧥", texte: "Prends un manteau" },
@@ -119,7 +118,7 @@ let recommandations =[];
   ];
 
   if (temperature < 0) {
-    recommandations.push (combi[0]);
+    recommandations.push(combi[0]);
   } else if (temperature < 10) {
     recommandations.push(combi[1]);
   } else if (temperature < 20) {
@@ -128,36 +127,35 @@ let recommandations =[];
     recommandations.push(combi[3]);
   }
 
-const combi2 =[
+  /* partie 2*/
+  
+  const combi2 = [
     { icone: "☂️", texte: "N'oublie pas ton parapluie" },
     { icone: "⚠️", texte: "Évite les zones exposées" },
     { icone: "👢", texte: "Préfère des bottes imperméables" },
     { icone: "🕶️", texte: "Pense à la crème solaire" },
-];
+  ];
 
-    if (conditions === "pluvieux"){
-    recommandations.push (combi2[0])};
+  if (conditions === "pluvieux") {
+    recommandations.push(combi2[0]);
+  }
 
-      if (conditions ==="orageux"){
-    recommandations.push (combi2[1])};
+  if (conditions === "orageux") {
+    recommandations.push(combi2[1]);
+  }
 
-      if (conditions === "neige"){
-    recommandations.push (combi2[2])};
+  if (conditions === "neige") {
+    recommandations.push(combi2[2]);
+  }
 
-     if (conditions === "ensoleille" && (temperature > 20)){
-    recommandations.push (combi2[3])};
+  if (conditions === "ensoleille" && temperature > 20) {
+    recommandations.push(combi2[3]);
+  }
 
-    return recommandations;
-     }
-
+  return recommandations;
+};
 
 console.log(recommanderTenue("neige", 1));
-
-
-
-
-
-
 
 // ── Affichage du résultat ────────────────────
 // Cette partie est déjà écrite — ne pas modifier.
@@ -199,4 +197,4 @@ btnAnalyser.addEventListener("click", () => {
   }
 
   afficherResultat(temperature, conditions);
-})
+});
