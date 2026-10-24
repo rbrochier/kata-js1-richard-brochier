@@ -128,7 +128,7 @@ const recommanderTenue = (conditions, temperature) => {
   }
 
   /* partie 2*/
-  
+
   const combi2 = [
     { icone: "☂️", texte: "N'oublie pas ton parapluie" },
     { icone: "⚠️", texte: "Évite les zones exposées" },
@@ -198,3 +198,18 @@ btnAnalyser.addEventListener("click", () => {
 
   afficherResultat(temperature, conditions);
 });
+
+
+/*
+Dans recommanderTenue, pourquoi utilises-tu des if séparés pour les conditions météo plutôt que des else if ?
+Car plusieurs règles peuvent s'appliquer.
+
+Que se passe-t-il si l'utilisateurice entre une température de 28°C avec des conditions "ensoleille" ? 
+Il n'y a q'une seule recommandantion qui s'applique.
+
+
+Quelles recommandations s'affichent et pourquoi ?
+Temps agréable et pense à la crème solaire (avec emoji lunettes) , car il y'a plusieurs conditions réunies.
+Et donc la première (temperature >=30(seule) ne s'applique pas et on passe à la seconde).
+
+*/
